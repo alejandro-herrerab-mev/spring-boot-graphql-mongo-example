@@ -1,8 +1,10 @@
 package com.aherrera.spring.graphql.controller;
 
-import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
@@ -30,8 +32,9 @@ public class TutorialController {
     }
 
     @QueryMapping
-    public List<Tutorial> findAllTutorials() {
-        return tutorialRepository.findAll();
+    public Page<Tutorial> findAllTutorials(@Argument Integer limit) {
+        Pageable page = PageRequest.of(0, limit != null ? limit : 1000);
+        return tutorialRepository.findAll(page);
     }
 
     @QueryMapping

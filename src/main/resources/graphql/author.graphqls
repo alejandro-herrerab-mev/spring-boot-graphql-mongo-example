@@ -7,7 +7,7 @@ type Author {
 
 # Root
 type Query {
-	findAllAuthors: [Author]!
+	findAllAuthors(limit: Int): [Author]!
 	countAuthors: Int!
 	author(id: String): Author!
 }

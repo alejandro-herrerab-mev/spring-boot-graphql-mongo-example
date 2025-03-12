@@ -6,7 +6,7 @@ type Tutorial {
 }
 
 extend type Query {
-	findAllTutorials: [Tutorial]!
+	findAllTutorials(limit: Int): [Tutorial]!
 	countTutorials: Int!
 }
 

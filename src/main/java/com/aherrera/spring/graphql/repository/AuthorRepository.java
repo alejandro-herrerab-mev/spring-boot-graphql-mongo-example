@@ -6,5 +6,4 @@ import com.aherrera.spring.graphql.model.Author;
 
 
 public interface AuthorRepository extends MongoRepository<Author, String> {
-
 }
