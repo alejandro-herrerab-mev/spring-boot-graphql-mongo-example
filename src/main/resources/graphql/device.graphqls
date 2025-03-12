@@ -1,0 +1,31 @@
+type Device {
+  id: String!
+  name: String!
+  data: Data
+}
+
+type Data {
+  generation: String
+  capacityGB: Int
+  capacity: String
+  color: String
+  description: String
+  colour: String
+  caseSize: String
+  year: Int
+  price: Float
+  CPUModel: String
+  hardDiskSize: String
+}
+
+# Root
+extend type Query {
+  findAllDevices: [Device]!
+  # countAuthors: Int!
+  # author(id: String): Author!
+}
+
+# # Root
+# type Mutation {
+# 	createAuthor(name: String!, age: Int): Author!
+# }
