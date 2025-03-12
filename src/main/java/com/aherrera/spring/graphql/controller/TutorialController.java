@@ -14,34 +14,14 @@ import com.aherrera.spring.graphql.repository.AuthorRepository;
 import com.aherrera.spring.graphql.repository.TutorialRepository;
 
 @Controller
-public class GraphQLController {
+public class TutorialController {
 
     private final AuthorRepository authorRepository;
     private final TutorialRepository tutorialRepository;
 
-    GraphQLController(AuthorRepository authorRepository, TutorialRepository tutorialRepository) {
+    TutorialController(AuthorRepository authorRepository, TutorialRepository tutorialRepository) {
         this.authorRepository = authorRepository;
         this.tutorialRepository = tutorialRepository;
-    }
-
-    @QueryMapping
-    public Optional<Author> author(@Argument String id) {
-        return authorRepository.findById(id);
-    }
-
-    @QueryMapping
-    public List<Author> findAllAuthors() {
-        return authorRepository.findAll();
-    }
-
-    @QueryMapping
-    public Integer countAuthors() {
-        return (int) authorRepository.count();
-    }
-
-    @MutationMapping
-    public Author createAuthor(@Argument String name, @Argument Integer age) {
-        return authorRepository.save(new Author(name, age));
     }
 
     @QueryMapping
@@ -69,15 +49,5 @@ public class GraphQLController {
         }
         return tutorialResult;
     }
-
-    // @MutationMapping
-    // public Book addBook(@Argument BookInput bookInput) {
-    // return Book.addBook(bookInput);
-    // }
-
-    // @SchemaMapping
-    // public Tutorial tutorial(Author author) {
-    // return Author.getById(book.authorId());
-    // }
 
 }
