@@ -2,8 +2,6 @@ package com.aherrera.spring.graphql.model;
 
 import java.util.ArrayList;
 
-import com.aherrera.spring.graphql.model.RoundParticipants.Round;
-import com.aherrera.spring.graphql.model.RoundParticipants.Team;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Standings {

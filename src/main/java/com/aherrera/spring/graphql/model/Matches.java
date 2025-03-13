@@ -13,40 +13,17 @@ import com.aherrera.spring.graphql.model.Matches.HomeTeam.RelatedMatch;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.Score;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.Stadium;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.Winner;
-import com.aherrera.spring.graphql.model.RoundParticipants.Round;
-import com.aherrera.spring.graphql.model.RoundParticipants.Team;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Matches {
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-	public Matches(AwayTeam awayTeam, Competition competition, String fullTimeAt, HomeTeam homeTeam, String id,
-			KickOffTime kickOffTime, Leg leg, String lineupStatus, Long matchAttendance, Matchday matchday,
-			PlayerEvents playerEvents, PlayerOfTheMatch playerOfTheMatch, List<Referee> referees,
-			List<RelatedMatch> relatedMatches, Round round, Score score, String seasonYear, Long sessionNumber,
-			Stadium stadium, String status, String type, Winner winner) {
-		this.awayTeam = awayTeam;
-		this.competition = competition;
-		this.fullTimeAt = fullTimeAt;
-		this.homeTeam = homeTeam;
-		this.id = id;
-		this.kickOffTime = kickOffTime;
-		this.leg = leg;
-		this.lineupStatus = lineupStatus;
-		this.matchAttendance = matchAttendance;
-		this.matchday = matchday;
-		this.playerEvents = playerEvents;
-		this.playerOfTheMatch = playerOfTheMatch;
-		this.referees = referees;
-		this.relatedMatches = relatedMatches;
-		this.round = round;
-		this.score = score;
-		this.seasonYear = seasonYear;
-		this.sessionNumber = sessionNumber;
-		this.stadium = stadium;
-		this.status = status;
-		this.type = type;
-		this.winner = winner;
-	}
+
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class Matches {
 
     private AwayTeam awayTeam;
 	private Competition competition;
