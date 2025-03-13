@@ -15,7 +15,7 @@ public class MatchesController {
     private final FSPMatchRepository fspMatchRepository;
 
 
-    MatchesController(@Qualifier("FSPMatchRepository") FSPMatchRepository fspMatchRepository) {
+    MatchesController(@Qualifier("FSPMatchRepositoryImpl") FSPMatchRepository fspMatchRepository) {
         this.fspMatchRepository = fspMatchRepository;
     }
 

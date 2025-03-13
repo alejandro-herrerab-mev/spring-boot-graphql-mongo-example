@@ -5,15 +5,28 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.aherrera.spring.graphql.model.Standings;
 import com.aherrera.spring.graphql.utils.Utils;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Component
+@Slf4j
 public class FSPStandingsRepositoryImpl implements FSPStandingsRepository {
 
     private RestTemplate restTemplate;
+
+    @Autowired
+    private CacheManager cacheManager;
 
     public FSPStandingsRepositoryImpl(RestTemplateBuilder builder) {
         this.restTemplate = builder.build();
@@ -92,6 +105,7 @@ public class FSPStandingsRepositoryImpl implements FSPStandingsRepository {
     }
 
     @Override
+    @Cacheable(value = "standingsCache", key = "'standings__competitionId__'+#competitionId+'__seasonYear__'+#seasonYear")
     public Iterable<Standings> findAll(Integer competitionId, Integer seasonYear, List<Integer> groupIds,
             Integer roundId) {
         Map map = new HashMap<>();
@@ -100,4 +114,11 @@ public class FSPStandingsRepositoryImpl implements FSPStandingsRepository {
         return restTemplate.getForEntity(Utils.calculateURI(this.URI, map), List.class).getBody();
     }
 
+      @Scheduled(fixedDelay = 5000)
+    public void printCache(){
+        cacheManager.getCacheNames().stream().forEach(x -> {
+            log.debug(x);
+            Cache jCache = cacheManager.getCache(x);
+        });
+    }
 }

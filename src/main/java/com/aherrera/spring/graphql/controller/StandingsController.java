@@ -15,7 +15,7 @@ public class StandingsController {
     private final FSPStandingsRepository fspStandingsRepository;
 
 
-    StandingsController(@Qualifier("FSPStandingsRepository") FSPStandingsRepository fspStandingsRepository) {
+    StandingsController(@Qualifier("FSPStandingsRepositoryImpl") FSPStandingsRepository fspStandingsRepository) {
         this.fspStandingsRepository = fspStandingsRepository;
     }
 
