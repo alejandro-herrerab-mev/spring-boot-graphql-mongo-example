@@ -1,0 +1,501 @@
+type ReasonTextAbbr {
+  HU: String
+  CS: String
+  EN: String
+  TR: String
+  FR: String
+  RU: String
+  PT: String
+  IT: String
+  ES: String
+  DE: String
+  ZH: String
+  NL: String
+}
+
+type Aggregate {
+  reason: String
+  translations: Translations
+  team: Team
+}
+
+type Winner {
+  match: Match
+  aggregate: Aggregate
+}
+
+type SponsorName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type SpecialEventsName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type OfficialName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type MediaName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type Pitch {
+  length: Int
+  width: Int
+}
+
+type Images {
+  MEDIUM_WIDE: String
+  LARGE_ULTRA_WIDE: String
+}
+
+type Geolocation {
+  latitude: Float
+  longitude: Float
+}
+
+type City {
+  countryCode: String
+  id: String
+  translations: Translations
+}
+
+type Stadium {
+  address: String
+  capacity: Int
+  countryCode: String
+  id: String
+  openingDate: String
+  translations: Translations
+  pitch: Pitch
+  images: Images
+  geolocation: Geolocation
+  city: City
+}
+
+type Total {
+  away: Int
+  home: Int
+}
+
+type Regular {
+  away: Int
+  home: Int
+}
+
+type Score {
+  total: Total
+  regular: Regular
+  aggregate: Aggregate
+}
+
+
+type ReasonText {
+  HU: String
+  CS: String
+  EN: String
+  TR: String
+  FR: String
+  RU: String
+  PT: String
+  IT: String
+  ES: String
+  DE: String
+  ZH: String
+  NL: String
+}
+
+type Match {
+  reason: String
+  translations: Translations
+  team: Team
+}
+
+type KickOffTime {
+  date: String
+  dateTime: String
+  utcOffsetInHours: Int
+}
+
+type HomeTeam {
+  associationId: String
+  associationLogoUrl: String
+  bigLogoUrl: String
+  confederationType: String
+  countryCode: String
+  id: String
+  idProvider: String
+  internationalName: String
+  isPlaceHolder: Boolean
+  logoUrl: String
+  mediumLogoUrl: String
+  organizationId: String
+  teamCode: String
+  teamTypeDetail: String
+  typeIsNational: Boolean
+  typeTeam: String
+  translations: Translations
+}
+
+type AwayTeam {
+  associationId: String
+  associationLogoUrl: String
+  bigLogoUrl: String
+  confederationType: String
+  countryCode: String
+  id: String
+  idProvider: String
+  internationalName: String
+  isPlaceHolder: Boolean
+  logoUrl: String
+  mediumLogoUrl: String
+  organizationId: String
+  teamCode: String
+  teamTypeDetail: String
+  typeIsNational: Boolean
+  typeTeam: String
+  translations: Translations
+}
+
+type RelatedMatches {
+  id: String
+  status: String
+  type: String
+  winner: Winner
+  score: Score
+  kickOffTime: KickOffTime
+  homeTeam: HomeTeam
+  awayTeam: AwayTeam
+}
+
+type RoleName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type LastName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type FirstName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type Person {
+  countryCode: String
+  gender: String
+  id: String
+  translations: Translations
+}
+
+type Referees {
+  role: String
+  translations: Translations
+  person: Person
+  images: Images
+}
+
+type NationalFieldPosition {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type FieldPosition {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type PlayerOfTheMatch {
+  teamId: String
+  player: Player
+}
+
+type Time {
+  minute: Int
+  second: Int
+}
+
+type CountryOfBirthName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+
+
+type Player {
+  age: String
+  birthDate: String
+  clubId: String
+  clubJerseyNumber: String
+  clubShirtName: String
+  countryCode: String
+  countryOfBirthCode: String
+  detailedFieldPosition: String
+  fieldPosition: String
+  gender: String
+  height: Int
+  id: String
+  imageUrl: String
+  internationalName: String
+  nationalFieldPosition: String
+  nationalJerseyNumber: String
+  nationalShirtName: String
+  nationalTeamId: String
+  weight: Int
+  translations: Translations
+}
+
+type Scorers {
+  goalType: String
+  id: String
+  phase: String
+  teamId: String
+  teamIdProvider: String
+  time: Time
+  player: Player
+}
+
+type PlayerEvents {
+  scorers: [Scorers]
+}
+
+type LongName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type Matchday {
+  competitionId: String
+  dateFrom: String
+  dateTo: String
+  format: String
+  id: String
+  longName: String
+  name: String
+  roundId: String
+  seasonYear: String
+  sequenceNumber: String
+  type: String
+  translations: Translations
+}
+
+type Leg {
+  dateTimeFrom: String
+  dateTimeTo: String
+  number: Int
+  translations: Translations
+}
+
+type TournamentName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type QualifyingName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type PrequalifyingName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type Competition {
+  age: String
+  code: String
+  id: String
+  region: String
+  sex: String
+  sportsType: String
+  teamCategory: String
+  type: String
+  translations: Translations
+  metaData: MetaData
+  images: Images
+}
+
+type Matches {
+  fullTimeAt: String
+  id: String
+  lineupStatus: String
+  matchAttendance: Int
+  seasonYear: String
+  sessionNumber: Int
+  status: String
+  type: String
+  winner: Winner
+  stadium: Stadium
+  score: Score
+  round: Round
+  relatedMatches: [RelatedMatches]
+  referees: [Referees]
+  playerOfTheMatch: PlayerOfTheMatch
+  playerEvents: PlayerEvents
+  matchday: Matchday
+  leg: Leg
+  kickOffTime: KickOffTime
+  homeTeam: HomeTeam
+  competition: Competition
+  awayTeam: AwayTeam
+}
+
+# Types with identical fields:
+# ReasonTextAbbr ReasonText
+# DisplayTeamCode DisplayOfficialName DisplayName CountryName SponsorName SpecialEventsName OfficialName Name MediaName ShortName Abbreviation RoleName LastName FirstName NationalFieldPosition FieldPosition CountryOfBirthName LongName TournamentName QualifyingName PrequalifyingName
+# Team HomeTeam AwayTeam
+# Aggregate Match
+# Total Regular
+
+extend type Query {
+  findAllMatches(competitionId: Int , seasonYear: Int): [Matches]!
+  countMatches: Int!
+}
+

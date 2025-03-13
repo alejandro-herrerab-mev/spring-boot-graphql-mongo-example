@@ -1,0 +1,52 @@
+type Round {
+  active: Boolean
+  benchGKCount: Int
+  benchPlayersCount: Int
+  benchStaffCount: Int
+  coefficientWinnerBonus: Int
+  competitionId: String
+  fieldPlayersCount: Int
+  groupCount: Int
+  id: String
+  mode: String
+  modeDetail: String
+  orderInCompetition: Int
+  phase: String
+  seasonYear: String
+  secondaryType: String
+  stadiumNameType: String
+  status: String
+  substitutionCount: Int
+  teamCount: Int
+  teams: [String]
+}
+
+type Team {
+  associationId: String
+  associationLogoUrl: String
+  bigLogoUrl: String
+  confederationType: String
+  countryCode: String
+  id: String
+  idProvider: String
+  internationalName: String
+  isPlaceHolder: Boolean
+  logoUrl: String
+  mediumLogoUrl: String
+  organizationId: String
+  teamCode: String
+  teamTypeDetail: String
+  # Translations translations;
+  typeIsNational: Boolean
+  typeTeam: String
+}
+
+type RoundParticipants {
+  round: Round
+  teams: [Team]
+}
+
+extend type Query {
+  findAllRounds(competitionId: Int , seasonYear: Int): [RoundParticipants]!
+  countRounds: Int!
+}

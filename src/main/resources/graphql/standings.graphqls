@@ -1,0 +1,77 @@
+
+
+
+type LabelName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type QualificationLabels {
+  labelId: String
+  translations: Translations
+}
+
+type Items {
+  drawn: Int
+  goalDifference: Int
+  goalsAgainst: Int
+  goalsFor: Int
+  goalsForAway: Int
+  goalsForHome: Int
+  isLive: Boolean
+  isOverridden: Boolean
+  lost: Int
+  lostAway: Int
+  lostHome: Int
+  played: Int
+  points: Int
+  qualified: Boolean
+  rank: Int
+  rankTrend: String
+  teamId: String
+  won: Int
+  wonAway: Int
+  wonHome: Int
+  team: Team
+}
+
+type Group {
+  competitionId: String
+  id: String
+  order: Int
+  phase: String
+  roundId: String
+  seasonYear: String
+  teamsQualifiedNumber: Int
+  type: String
+  translations: Translations
+  teams: [String]
+  metaData: MetaData
+}
+
+type Standings {
+  status: String
+  round: Round
+  qualificationLabels: [QualificationLabels]
+  items: [Items]
+  group: Group
+}
+
+# Types with identical fields:
+# ShortName Name Abbreviation LabelName DisplayTeamCode DisplayOfficialName DisplayName CountryName
+
+
+extend type Query {
+  findAllStandings(competitionId: Int , seasonYear: Int): [Standings]!
+  countStandings: Int!
+}

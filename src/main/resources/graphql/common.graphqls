@@ -1,0 +1,122 @@
+type DisplayTeamCode {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type DisplayOfficialName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type DisplayName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type CountryName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type ShortName {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type Abbreviation {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type Name {
+  EN: String
+  FR: String
+  DE: String
+  ES: String
+  PT: String
+  IT: String
+  RU: String
+  ZH: String
+  TR: String
+  HU: String
+  CS: String
+  NL: String
+}
+
+type MetaData {
+  name: String
+  type: String
+}
+
+
+
+type Translations {
+  shortName: ShortName
+  nationalFieldPosition: NationalFieldPosition
+  name: Name
+  lastName: LastName
+  firstName: FirstName
+  fieldPosition: FieldPosition
+  countryOfBirthName: CountryOfBirthName
+  countryName: CountryName
+}
