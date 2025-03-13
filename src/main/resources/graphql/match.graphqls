@@ -495,7 +495,7 @@ type Matches {
 # Total Regular
 
 extend type Query {
-  findAllMatches(competitionId: Int , seasonYear: Int): [Matches]!
+  findAllMatches(order: String, phase: String, status: String, offset: Int, limit: Int): [Matches]!
   countMatches: Int!
 }
 

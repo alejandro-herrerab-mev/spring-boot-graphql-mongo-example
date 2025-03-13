@@ -95,10 +95,13 @@ public class FSPMatchRepositoryImpl implements FSPMatchRepository {
     }
 
     @Override
-    public Iterable<Matches> findAll(Integer competitionId, Integer seasonYear, List<Integer> groupIds, Integer roundId) {
+    public Iterable<Matches> findAll(String order, String phase, String status, Integer offset, Integer limit) {
         Map map = new HashMap<>();
-        map.put("competitionId", competitionId);
-        map.put("seasonYear", seasonYear);
+        map.put("order", order);
+        map.put("phase", phase);
+        map.put("status", status);
+        map.put("offset", offset);
+        map.put("limit", limit);
         return restTemplate.getForEntity(Utils.calculateURI(this.URI, map), List.class).getBody();
     }
     

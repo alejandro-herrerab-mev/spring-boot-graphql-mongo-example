@@ -20,11 +20,9 @@ public class MatchesController {
     }
 
     @QueryMapping
-    public Iterable<Matches> findAllMatches(@Argument Integer competitionId,  @Argument Integer seasonYear) {
-        // ?competitionId=1&seasonYear=2025
-        // Pageable page = PageRequest.of(0, limit != null ? limit : 1000);
-        // return roundRepository.saveAll(fspRoundParticipantsRepository.findAll());
-        return fspMatchRepository.findAll(competitionId, seasonYear, null, null);
+    public Iterable<Matches> findAllMatches(@Argument String order,  @Argument String phase, @Argument String status, @Argument Integer offset, @Argument Integer limit) {
+        // order=DESC&phase=ALL&status=FINISHED&offset=0&limit=2
+        return fspMatchRepository.findAll(order, phase, status, offset, limit);
     }
 
 }
