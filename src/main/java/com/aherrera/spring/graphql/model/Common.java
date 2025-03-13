@@ -207,4 +207,137 @@ public class Common {
         public DisplayOfficialName displayOfficialName;
         public DisplayTeamCode displayTeamCode;
     }
+
+
+    public class Score {
+		private Aggregate aggregate;
+		private Regular regular;
+		private Total total;
+
+		public Score(Aggregate aggregate, Regular regular, Total total) {
+			this.aggregate = aggregate;
+			this.regular = regular;
+			this.total = total;
+		}
+
+		public Aggregate getAggregate() {
+			return this.aggregate;
+		}
+
+		public Regular getRegular() {
+			return this.regular;
+		}
+
+		public Total getTotal() {
+			return this.total;
+		}
+
+		public void setAggregate(Aggregate aggregate) {
+			this.aggregate = aggregate;
+		}
+
+		public void setRegular(Regular regular) {
+			this.regular = regular;
+		}
+
+		public void setTotal(Total total) {
+			this.total = total;
+		}
+	}
+
+	public class Aggregate {
+		private Long away;
+		private Long home;
+
+		public Aggregate(Long away, Long home) {
+			this.away = away;
+			this.home = home;
+		}
+
+		public Long getAway() {
+			return this.away;
+		}
+
+		public Long getHome() {
+			return this.home;
+		}
+
+		public void setAway(Long away) {
+			this.away = away;
+		}
+
+		public void setHome(Long home) {
+			this.home = home;
+		}
+	}
+
+	public class Regular {
+		private Long away;
+		private Long home;
+
+		public Regular(Long away, Long home) {
+			this.away = away;
+			this.home = home;
+		}
+
+		public Long getAway() {
+			return this.away;
+		}
+
+		public Long getHome() {
+			return this.home;
+		}
+
+		public void setAway(Long away) {
+			this.away = away;
+		}
+
+		public void setHome(Long home) {
+			this.home = home;
+		}
+	}
+
+	public class Total {
+		private Long away;
+		private Long home;
+
+		public Total(Long away, Long home) {
+			this.away = away;
+			this.home = home;
+		}
+
+		public Long getAway() {
+			return this.away;
+		}
+
+		public Long getHome() {
+			return this.home;
+		}
+
+		public void setAway(Long away) {
+			this.away = away;
+		}
+
+		public void setHome(Long home) {
+			this.home = home;
+		}
+	}
+
+    public class Images {
+		@JsonProperty("FULL_LOGO")
+		private String fullLogo;
+
+		public Images(String fullLogo) {
+			this.fullLogo = fullLogo;
+		}
+
+		public String getFullLogo() {
+			return this.fullLogo;
+		}
+
+		public void setFullLogo(String fullLogo) {
+			this.fullLogo = fullLogo;
+		}
+	}
+
 }

@@ -2,6 +2,8 @@ package com.aherrera.spring.graphql.model;
 
 import java.util.List;
 
+import com.aherrera.spring.graphql.model.Common.Aggregate;
+import com.aherrera.spring.graphql.model.Common.Score;
 import com.aherrera.spring.graphql.model.Common.Translations;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.KickOffTime;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.Leg;
@@ -10,7 +12,6 @@ import com.aherrera.spring.graphql.model.Matches.HomeTeam.PlayerEvents;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.PlayerOfTheMatch;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.Referee;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.RelatedMatch;
-import com.aherrera.spring.graphql.model.Matches.HomeTeam.Score;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.Stadium;
 import com.aherrera.spring.graphql.model.Matches.HomeTeam.Winner;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -400,296 +401,6 @@ public class Matches {
 
 		public void setTypeTeam(String typeTeam) {
 			this.typeTeam = typeTeam;
-		}
-	}
-
-	public class Competition {
-		private String age;
-		private String code;
-		private String id;
-		private Images images;
-		private MetaData metaData;
-		private String region;
-		private String sex;
-		private String sportsType;
-		private String teamCategory;
-		private Translations translations;
-		private String type;
-
-		public Competition(String age, String code, String id, Images images, MetaData metaData, String region,
-				String sex, String sportsType, String teamCategory, Translations translations, String type) {
-			this.age = age;
-			this.code = code;
-			this.id = id;
-			this.images = images;
-			this.metaData = metaData;
-			this.region = region;
-			this.sex = sex;
-			this.sportsType = sportsType;
-			this.teamCategory = teamCategory;
-			this.translations = translations;
-			this.type = type;
-		}
-
-		public String getAge() {
-			return this.age;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public String getId() {
-			return this.id;
-		}
-
-		public Images getImages() {
-			return this.images;
-		}
-
-		public MetaData getMetaData() {
-			return this.metaData;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public String getSex() {
-			return this.sex;
-		}
-
-		public String getSportsType() {
-			return this.sportsType;
-		}
-
-		public String getTeamCategory() {
-			return this.teamCategory;
-		}
-
-		public Translations getTranslations() {
-			return this.translations;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setAge(String age) {
-			this.age = age;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public void setImages(Images images) {
-			this.images = images;
-		}
-
-		public void setMetaData(MetaData metaData) {
-			this.metaData = metaData;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public void setSex(String sex) {
-			this.sex = sex;
-		}
-
-		public void setSportsType(String sportsType) {
-			this.sportsType = sportsType;
-		}
-
-		public void setTeamCategory(String teamCategory) {
-			this.teamCategory = teamCategory;
-		}
-
-		public void setTranslations(Translations translations) {
-			this.translations = translations;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-	}
-
-	public class Images {
-		@JsonProperty("FULL_LOGO")
-		private String fullLogo;
-
-		public Images(String fullLogo) {
-			this.fullLogo = fullLogo;
-		}
-
-		public String getFullLogo() {
-			return this.fullLogo;
-		}
-
-		public void setFullLogo(String fullLogo) {
-			this.fullLogo = fullLogo;
-		}
-	}
-
-	public class MetaData {
-		private String name;
-
-		public MetaData(String name) {
-			this.name = name;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-	}
-
-
-	public class Name {
-		@JsonProperty("EN")
-		private String en;
-		@JsonProperty("FR")
-		private String fr;
-		@JsonProperty("DE")
-		private String de;
-		@JsonProperty("ES")
-		private String es;
-		@JsonProperty("PT")
-		private String pt;
-		@JsonProperty("IT")
-		private String it;
-		@JsonProperty("RU")
-		private String ru;
-		@JsonProperty("ZH")
-		private String zh;
-		@JsonProperty("TR")
-		private String tr;
-		@JsonProperty("HU")
-		private String hu;
-		@JsonProperty("CS")
-		private String cs;
-		@JsonProperty("NL")
-		private String nl;
-
-		public Name(String en, String fr, String de, String es, String pt, String it, String ru, String zh, String tr,
-				String hu, String cs, String nl) {
-			this.en = en;
-			this.fr = fr;
-			this.de = de;
-			this.es = es;
-			this.pt = pt;
-			this.it = it;
-			this.ru = ru;
-			this.zh = zh;
-			this.tr = tr;
-			this.hu = hu;
-			this.cs = cs;
-			this.nl = nl;
-		}
-
-		public String getEn() {
-			return this.en;
-		}
-
-		public String getFr() {
-			return this.fr;
-		}
-
-		public String getDe() {
-			return this.de;
-		}
-
-		public String getEs() {
-			return this.es;
-		}
-
-		public String getPt() {
-			return this.pt;
-		}
-
-		public String getIt() {
-			return this.it;
-		}
-
-		public String getRu() {
-			return this.ru;
-		}
-
-		public String getZh() {
-			return this.zh;
-		}
-
-		public String getTr() {
-			return this.tr;
-		}
-
-		public String getHu() {
-			return this.hu;
-		}
-
-		public String getCs() {
-			return this.cs;
-		}
-
-		public String getNl() {
-			return this.nl;
-		}
-
-		public void setEn(String en) {
-			this.en = en;
-		}
-
-		public void setFr(String fr) {
-			this.fr = fr;
-		}
-
-		public void setDe(String de) {
-			this.de = de;
-		}
-
-		public void setEs(String es) {
-			this.es = es;
-		}
-
-		public void setPt(String pt) {
-			this.pt = pt;
-		}
-
-		public void setIt(String it) {
-			this.it = it;
-		}
-
-		public void setRu(String ru) {
-			this.ru = ru;
-		}
-
-		public void setZh(String zh) {
-			this.zh = zh;
-		}
-
-		public void setTr(String tr) {
-			this.tr = tr;
-		}
-
-		public void setHu(String hu) {
-			this.hu = hu;
-		}
-
-		public void setCs(String cs) {
-			this.cs = cs;
-		}
-
-		public void setNl(String nl) {
-			this.nl = nl;
 		}
 	}
 
@@ -5570,130 +5281,16 @@ public class Matches {
 		}
 	}
 
-	public class Score {
-		private Aggregate aggregate;
-		private Regular regular;
-		private Total total;
-
-		public Score(Aggregate aggregate, Regular regular, Total total) {
-			this.aggregate = aggregate;
-			this.regular = regular;
-			this.total = total;
-		}
-
-		public Aggregate getAggregate() {
-			return this.aggregate;
-		}
-
-		public Regular getRegular() {
-			return this.regular;
-		}
-
-		public Total getTotal() {
-			return this.total;
-		}
-
-		public void setAggregate(Aggregate aggregate) {
-			this.aggregate = aggregate;
-		}
-
-		public void setRegular(Regular regular) {
-			this.regular = regular;
-		}
-
-		public void setTotal(Total total) {
-			this.total = total;
-		}
-	}
-
-	public class Aggregate {
-		private Long away;
-		private Long home;
-
-		public Aggregate(Long away, Long home) {
-			this.away = away;
-			this.home = home;
-		}
-
-		public Long getAway() {
-			return this.away;
-		}
-
-		public Long getHome() {
-			return this.home;
-		}
-
-		public void setAway(Long away) {
-			this.away = away;
-		}
-
-		public void setHome(Long home) {
-			this.home = home;
-		}
-	}
-
-	public class Regular {
-		private Long away;
-		private Long home;
-
-		public Regular(Long away, Long home) {
-			this.away = away;
-			this.home = home;
-		}
-
-		public Long getAway() {
-			return this.away;
-		}
-
-		public Long getHome() {
-			return this.home;
-		}
-
-		public void setAway(Long away) {
-			this.away = away;
-		}
-
-		public void setHome(Long home) {
-			this.home = home;
-		}
-	}
-
-	public class Total {
-		private Long away;
-		private Long home;
-
-		public Total(Long away, Long home) {
-			this.away = away;
-			this.home = home;
-		}
-
-		public Long getAway() {
-			return this.away;
-		}
-
-		public Long getHome() {
-			return this.home;
-		}
-
-		public void setAway(Long away) {
-			this.away = away;
-		}
-
-		public void setHome(Long home) {
-			this.home = home;
-		}
-	}
-
 	public class Winner {
-		private Aggregate2 aggregate;
+		private Aggregate aggregate;
 		private Match match;
 
-		public Winner(Aggregate2 aggregate, Match match) {
+		public Winner(Aggregate aggregate, Match match) {
 			this.aggregate = aggregate;
 			this.match = match;
 		}
 
-		public Aggregate2 getAggregate() {
+		public Aggregate getAggregate() {
 			return this.aggregate;
 		}
 
@@ -5701,48 +5298,12 @@ public class Matches {
 			return this.match;
 		}
 
-		public void setAggregate(Aggregate2 aggregate) {
+		public void setAggregate(Aggregate aggregate) {
 			this.aggregate = aggregate;
 		}
 
 		public void setMatch(Match match) {
 			this.match = match;
-		}
-	}
-
-	public class Aggregate2 {
-		private String reason;
-		private Team team;
-		private Translations translations;
-
-		public Aggregate2(String reason, Team team, Translations translations) {
-			this.reason = reason;
-			this.team = team;
-			this.translations = translations;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public Team getTeam() {
-			return this.team;
-		}
-
-		public Translations getTranslations() {
-			return this.translations;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public void setTeam(Team team) {
-			this.team = team;
-		}
-
-		public void setTranslations(Translations translations) {
-			this.translations = translations;
 		}
 	}
 
